@@ -1,36 +1,21 @@
 <template>
-  
+  <header-hero/>
   <section class="section-wrapper-mini">
     <div class="squish">
-      <h2>Rules</h2>
-      <ol>
-        <li>Lorem, ipsum dolor sit amet consectetur adipisicing.</li>
-        <li>Minus non modi fugit, rerum quae quos?</li>
-        <li>Obcaecati eius amet blanditiis? Est, id dolorum.</li>
-        <li>Corporis eos labore quam hic molestiae illo!</li>
-        <ol id="sub-section">
-          <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi assumenda cum quo magnam perspiciatis.</li>
-          <li>Ipsa ea dicta, eveniet nostrum, temporibus veritatis sit, quaerat doloribus voluptatibus modi magnam dolorem?</li>
-          <li>Non ex qui iste suscipit, aliquid atque dolorum voluptates dolores et, numquam autem hic!</li>
-          <li>Corporis, animi quis rem dicta obcaecati deleniti reprehenderit minima dignissimos exercitationem quisquam ullam sequi.</li>
-          <li>Amet vel veniam, ad at fugiat officiis illo a earum illum enim impedit dolore!</li>
-          <li>Rem possimus dolorem dolore nesciunt molestias, laborum deserunt soluta, quam nulla doloremque est. Perspiciatis!</li>
-          <li>Ullam reiciendis fuga praesentium veritatis quas, dignissimos ex, eveniet quia, dicta excepturi ea perferendis!</li>
-        </ol>
-        <li>Tempore, quidem ad eveniet esse aliquid non?</li>
-      </ol>
+      <h2>Server Rules</h2>
+      <rule-container/>
     </div>
   </section>
   <section class="section-wrapper-mini">
     <div class="squish">
       <h2>Server staff lol</h2>
       <div class="card-layout">
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
+        <user-card/>
+        <user-card/>
+        <user-card/>
+        <user-card/>
+        <user-card/>
+        <user-card/>
       </div>
     </div>
   </section>
@@ -51,13 +36,17 @@
 </template>
 
 <script>
-import UserCard from "./components/UserCard.vue";
+// import { defineAsyncComponent } from '@vue/runtime-core';
+  import HeaderHero from './components/HeaderHero.vue';
+  import RuleContainer from "./components/RulesContainer.vue";
+  import UserCard from "./components/UserCard.vue";
+
+//const lazyBaby = defineAsyncComponent(() => {
+//  import("./components/UserCard.vue")
+//})
 
 export default {
-  name: "wild-times",
-  components: {
-    UserCard,
-  },
+  components: {HeaderHero, RuleContainer, UserCard}
 };
 </script>
 
@@ -66,16 +55,16 @@ export default {
 @import "assets/scss/mixins.scss";
 
 // Some boring crap
-body {
-  overflow-x: hidden;
-}
-
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -100,35 +89,19 @@ body {
 
 section {
   &:nth-child(odd) {
-    background: lighten(green, 25%);
+    background: lighten(blue, 25%);
   }
   &:nth-child(even) {
-    background: lighten(green, 15%);
+    background: lighten(blue, 15%);
   }
 }
 
 .section-wrapper {
   &-mini {
     padding-block: 2rem;
-
-    ol {
-      margin-left: 1.5rem;
-
-      
-    }
-
-    li {
-      &::marker {
-        color: darkblue !important;
-      }
-    }
-    #sub-section {
-      li {
-        list-style-type: lower-alpha;
-      }
-    }
   }
 }
+
 .card-layout {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

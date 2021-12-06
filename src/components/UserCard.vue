@@ -1,7 +1,7 @@
 <template>
   <div class="cd-wrapper">
     <div class="cd-info">
-      <img :src="require(`@/assets/img/${avatar}`)">
+      <img :src="require(`@/assets/img/${avatar}`)" alt="User avatar" aria-label="User avatar">
       <h2>{{ name }}</h2>
       <p>{{ role }}</p>
     </div>
@@ -41,7 +41,7 @@ export default {
     img {
       width: 127px;
       border-radius: 16px;
-      box-shadow: 0 0 12px rgba(black, 25%);
+      box-shadow: 0 0 12px rgba(black, 10%);
     }
 
     :is(h2, p) {
