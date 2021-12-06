@@ -1,0 +1,15 @@
+@mixin flex-param($hcenter: center, $vcenter: center, $dir: row) {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: $hcenter;
+  align-items: $vcenter;
+  flex-direction: $dir;
+}
+
+@mixin pos-absolute($top: 0, $bottom: unset, $left: 0, $right: unset) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
