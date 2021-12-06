@@ -20,8 +20,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/mixins.scss';
-
 .cd {
   &-wrapper {
     @include flex-param(center, unset, row);
