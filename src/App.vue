@@ -62,6 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100;300;500;700&family=Poppins:ital,wght@0,500;0,700;1,500;1,700&display=swap';
 @import "assets/scss/mixins.scss";
 
 // Some boring crap
@@ -113,16 +114,17 @@ section {
     ol {
       margin-left: 1.5rem;
 
-      #sub-section {
-        li {
-          list-style-type: lower-alpha;
-        }
-      }
+      
     }
 
     li {
       &::marker {
         color: darkblue !important;
+      }
+    }
+    #sub-section {
+      li {
+        list-style-type: lower-alpha;
       }
     }
   }
