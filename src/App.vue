@@ -1,108 +1,52 @@
 <template>
-  <header-hero/>
-  <section class="section-wrapper-mini">
-    <div class="squish">
-      <h2>Server Rules</h2>
-      <rule-container/>
-    </div>
-  </section>
-  <section class="section-wrapper-mini">
-    <div class="squish">
-      <h2>Server staff lol</h2>
-      <div class="card-layout">
-        <user-card/>
-        <user-card/>
-        <user-card/>
-        <user-card/>
-        <user-card/>
-        <user-card/>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div id="copyright">
-      &copy; {{ new Date().getFullYear() }}, site built by @skepfusky in
-      <img alt="Vue logo" src="./assets/img/vue-logo.png" /> Vue.js.
-    </div>
-    <div id="social-row">
-      <ul>
-        <li><a target="__blank" href="#">youtube</a></li>
-        <li><a target="__blank" href="#">twitter</a></li>
-        <li><a target="__blank" href="#">instagram</a></li>
-        <li><a target="__blank" href="#">github</a></li>
-      </ul>
-    </div>
-  </footer>
+  <div id="construction-toast">
+    <i class="fas fa-2x fa-exclamation-triangle"></i>
+    <p><strong>This site is still under construction!</strong> There are some missing or filler content that are not completed yet. Proceed with caution, you might die of too much cringe!</p>
+  </div>
+  <wt-main />
+  <wt-rules />
+  <wt-staff />
+  <wt-footer />
 </template>
 
 <script>
-// import { defineAsyncComponent } from '@vue/runtime-core';
-  import HeaderHero from './components/HeaderHero.vue';
-  import RuleContainer from "./components/RulesContainer.vue";
-  import UserCard from "./components/UserCard.vue";
-
-//const lazyBaby = defineAsyncComponent(() => {
-//  import("./components/UserCard.vue")
-//})
+import WtMain from './layouts/WtMain.vue';
+import WtRules from "./layouts/WtRules.vue";
+import WtFooter from './layouts/WtFooter.vue';
+import WtStaff from './layouts/WtStaff.vue';
 
 export default {
-  components: {HeaderHero, RuleContainer, UserCard}
+  components: { WtMain, WtRules, WtStaff, WtFooter }
 };
 </script>
 
 <style lang="scss">
-.squish {
-  width: 1280px;
-  margin: 0 auto;
-}
-
-section {
-  &:nth-child(odd) {
-    background: lighten(blue, 25%);
-  }
-  &:nth-child(even) {
-    background: lighten(blue, 15%);
-  }
-}
-
-.section-wrapper {
-  &-mini {
-    padding-block: 2rem;
-  }
-}
-
-.card-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-footer {
-  @include flex-param(center, center, column);
+#construction-toast {
+  border-top: 3px solid red;
+  padding: 1.25rem;
+  @include flex-param(unset, center, row);
+  column-gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: darken(orchid, 25%);
-  color: white;
-  padding: 1rem 0;
+  background-size: 56.57px 56.57px;
+  background-image: linear-gradient(
+    45deg,
+    #910000 25%,
+    #660000 25%,
+    #660000 50%,
+    #910000 50%,
+    #910000 75%,
+    #660000 75%,
+    #660000 100%
+  );
+  animation: bruh 500ms ease;
+  z-index: 69;
+}
 
-  ul {
-    @include flex-param(center, unset, row);
-    margin-top: 7px;
-  }
-
-  li {
-    margin-left: 20px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  #copyright {
-    img {
-      position: relative;
-      top: 2px;
-      width: 17px;
-    }
-  }
+@keyframes bruh {
+  0% {transform: translateY(-90px); opacity: 1;}
+  60% {transform: translateY(0px); opacity: 1;}
 }
 </style>

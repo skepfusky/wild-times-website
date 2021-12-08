@@ -1,9 +1,9 @@
 <template>
   <div class="cd-wrapper">
     <div class="cd-info">
-      <img :src="require(`@/assets/img/${avatar}`)" alt="User avatar" aria-label="User avatar">
-      <h2>{{ name }}</h2>
-      <p>{{ role }}</p>
+      <img :src="require(`@/assets/img/${userAvatar}`)" :alt="`${userName}'s avatar`" :aria-label="`${userName}'s avatar`">
+      <h2>{{ userName }}</h2>
+      <p>{{ userPosition }}</p>
     </div>
   </div>
 </template>
@@ -12,9 +12,9 @@
 export default {
   name: 'UserCard',
   props: {
-    avatar: {type: String, default: "skep.png"}, // use my stupid profile pic when value is not defined lol
-    name: {type: String, default: "Name"},
-    role: {type: String, default: "Role"}
+    userAvatar: {type: String, default: "skep.png"}, // use my stupid profile pic when value is not defined
+    userName: {type: String, default: "Name"},
+    userPosition: {type: String, default: "Role"}
   }
 }
 </script>
@@ -24,7 +24,9 @@ export default {
   &-wrapper {
     @include flex-param(center, unset, row);
     margin: 0 auto;
-    width: 19.5rem;
+    width: 100%;
+    background: rgba(black, 50%);
+    border-radius: 5px;
   }
 
   &-info {
@@ -37,14 +39,15 @@ export default {
     width: 100%;
 
     img {
-      width: 127px;
-      border-radius: 16px;
-      box-shadow: 0 0 12px rgba(black, 10%);
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 24px rgba(mix(white, royalblue, 75%), 50%);
     }
 
     :is(h2, p) {
       cursor: default;
       margin-top: 8px;
+      padding: 0;
     }
   }
 }
