@@ -3,13 +3,13 @@
     <div class="squish-el">
       <h2>Server staff lol</h2>
       <div class="card-layout">
-        <user-card userName="Jin" userPosition="Singer" />
-        <user-card userName="Jungkook" userPosition="Singer" />
-        <user-card userName="Jimin" userPosition="Singer" />
-        <user-card userName="Taehyung" userPosition="Singer" />
-        <user-card userName="Namjoon" userPosition="Rapper" />
-        <user-card userName="Yoongi" userPosition="Rapper" />
-        <user-card userName="Hoseok" userPosition="Rapper" />
+        <user-card isAdmin=true userName="Jin" userPos="Singer" />
+        <user-card userName="Jungkook" userPos="Singer" />
+        <user-card userName="Jimin" userPos="Singer, ass eater" />
+        <user-card isAdmin="true" userName="Taehyung" userPos="Singer" />
+        <user-card userName="Namjoon" userPos="Rapper" />
+        <user-card userName="Yoongi" userPos="Rapper" />
+        <user-card userName="Hoseok" userPos="Rapper" />
       </div>
     </div>
   </section>
