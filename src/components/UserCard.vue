@@ -6,8 +6,11 @@
         :alt="`${userName}'s avatar`"
         :aria-label="`${userName}'s avatar`"
       />
-      <h2>{{ userName }}</h2>
-      <p :class="[isAdmin ? 'has-admin' : '', isMod ? 'has-mod' : '']">{{ userPos }}</p>
+      <div class="mobile-wrapper">
+        <h2>{{ userName }}</h2>
+        <span :class="[isAdmin ? 'has-admin' : 'role-none']">Admin lol</span>
+        <span :class="[isMod ? 'has-mod' : 'role-none']">Mod lol</span>
+      </div>
     </div>
   </div>
 </template>
@@ -16,11 +19,11 @@
 export default {
   name: "UserCard",
   props: {
-    userAvatar: { type: String, default: "placeholder.png" }, // use my stupid profile pic when value is not defined
-    userName: { type: String, default: "Name" },
-    userPos: { type: String, default: "Role" },
-    isAdmin: { default: false },
-    isMod: { default: false }
+    userAvatar: { type: String, default: "placeholder.png" },
+    userName: { type: String },
+    userPos: { type: String },
+    isAdmin: { type: Boolean },
+    isMod: { type: Boolean }
   },
 };
 </script>
@@ -28,7 +31,6 @@ export default {
 <style lang="scss" scoped>
 $hover-out: 65%;
 $hover-in: 90%;
-$hover-time: 250ms;
 
 $black-mix: mix(black, royalblue, 75%);
 .cd {
@@ -48,8 +50,8 @@ $black-mix: mix(black, royalblue, 75%);
   }
 
   &-info {
-    @include flex-param(center, center, column);
-    text-align: center;
+    @include flex-param(center, center, row);
+    text-align: left;
     height: 20rem;
     box-shadow: 0 0 12px rgba($black-mix, 25%);
     border-radius: 6px;
@@ -70,10 +72,38 @@ $black-mix: mix(black, royalblue, 75%);
   }
 }
 
+.mobile-wrapper {
+  margin-left: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd {
+    &-info {
+      @include flex-param(center, center, column);
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+  .mobile-wrapper {
+    margin-left: 0;
+  }
+}
+
+$admin-color: mix(green, black, 75%);
+$mod-color: mix(cyan, black, 50%);
+$pos-width: 2px;
+
 .has {
   :is(&-admin, &-mod) {
-    p {
+    span {
       background: none;
+      width: 6.5rem;
+      padding: 2px 0.5rem;
+      border-radius: 20px;
+      font-size: 90%;
+      font-weight: bold;
+      margin-top: 10px;
 
       &:hover {
         transform: none;
@@ -83,15 +113,33 @@ $black-mix: mix(black, royalblue, 75%);
   }
 
   &-admin {
-    background: rgba(mix(green, black, 75%), $hover-out);
+    background: rgba($admin-color, $hover-out);
     @extend .cd-wrapper;
 
     &:hover {
-      background: rgba(mix(green, black, 75%), $hover-in);
+      background: rgba($admin-color, $hover-in);
     }
-    p {
+    span {
       color: lighten(green, 12%);
+      border: $pos-width solid lighten(green, 12%);
     }
   }
+
+  &-mod {
+    background: rgba($mod-color, $hover-out);
+    @extend .cd-wrapper;
+
+    &:hover {
+      background: rgba($mod-color, $hover-in);
+    }
+    span {
+      color: lighten(cyan, 12%);
+      border: $pos-width solid lighten(cyan, 12%);
+    }
+  }
+}
+
+.role-none {
+  display: none;
 }
 </style>

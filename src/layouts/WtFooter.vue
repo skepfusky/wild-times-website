@@ -4,11 +4,8 @@
       <p>
         Site built by Skepfusky
         <span style="opacity: .75; filter: opacity(75%);">#2002</span> in
-        <img alt="Vue logo" src="../assets/img/vue-logo.png" /> Vue.js.
+        <img alt="Vue logo" src="../assets/img/vue-logo.png" /> <strong>Vue.js</strong>.
       </p>
-      <a target="__blank" href="#">
-        <i class="fab fa-github"></i>&nbsp;Repo
-      </a>
       <ul>
         <li><a target="__blank" href="#"><i class="fab fa-youtube"></i></a></li>
         <li><a target="__blank" href="#"><i class="fab fa-twitter"></i></a></li>
@@ -23,7 +20,7 @@
 footer {
   @include flex-param(center, center, row);
   background: darken(royalblue, 46%);
-  padding: 2rem 0;
+  padding: 2rem 1.65rem;
   font-size: 90%;
 
   ul {
@@ -31,8 +28,9 @@ footer {
   }
 }
 #wrapper {
-  @include flex-param(unset, center, row);
+  @include flex-param(space-between, center, row);
   margin-right: 0px;
+  width: 1280px;
 
   p {
     margin-right: .45rem;
