@@ -64,7 +64,8 @@ $black-mix: mix(black, royalblue, 75%);
       box-shadow: 0 0 24px rgba(mix(white, royalblue, 75%), 35%);
     }
 
-    :is(h2, p) {
+    h2,
+    p {
       cursor: default;
       margin-top: 10px;
       padding: 0;
@@ -95,7 +96,8 @@ $mod-color: mix(cyan, black, 50%);
 $pos-width: 2px;
 
 .has {
-  :is(&-admin, &-mod) {
+  &-admin,
+  &-mod {
     span {
       background: none;
       width: 6.5rem;
