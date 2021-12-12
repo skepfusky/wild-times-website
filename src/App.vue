@@ -12,8 +12,8 @@
 <script>
 import WtMain from './layouts/WtMain.vue';
 import WtRules from "./layouts/WtRules.vue";
-import WtFooter from './layouts/WtFooter.vue';
 import WtStaff from './layouts/WtStaff.vue';
+import WtFooter from './layouts/WtFooter.vue';
 
 export default {
   components: { WtMain, WtRules, WtStaff, WtFooter }
