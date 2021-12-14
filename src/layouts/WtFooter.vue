@@ -29,21 +29,19 @@ footer {
 }
 #wrapper {
   @include flex-param(space-between, center, row);
-  margin-right: 0px;
+  margin-right: 0;
   width: 1280px;
+  cursor: default;
 
-  p {
-    margin-right: .45rem;
-  }
+  p {margin-right: .45rem;}
 
-  a {
-    margin-left: .4rem;
-  }
+  a {margin-left: .4rem;}
 
   img {
     position: relative;
     top: 2px;
     width: 17px;
+    pointer-events: none;
   }
 }
 
@@ -52,9 +50,8 @@ a {
   border: 1px solid gray;
   border-radius: 4px;
   transition: border 300ms ease;
+  cursor: pointer;
 
-  &:hover {
-    border-color: white;
-  }
+  &:hover {border-color: white;}
 }
 </style>
