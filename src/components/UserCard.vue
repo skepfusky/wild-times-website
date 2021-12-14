@@ -8,8 +8,8 @@
       />
       <div class="mobile-wrapper">
         <h2>{{ userName }}</h2>
-        <span :class="[isAdmin ? 'has-admin' : 'role-none']">Admin lol</span>
-        <span :class="[isMod ? 'has-mod' : 'role-none']">Mod lol</span>
+        <span v-if="isAdmin" class="has-admin">Admin lol</span>
+        <span v-if="isMod" class="has-mod">Mod lol</span>
       </div>
     </div>
   </div>
