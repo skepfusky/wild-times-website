@@ -1,4 +1,7 @@
 #  Wild Times website
+**UPDATE: I am no longer working on this website anymore as of Dec 14, as I personally don't feel like working on it anymore, and I have no contact to the mods and the owner to have access to their server IDs.**
+
+---
 
 A website for a chill and SFW furry server, **Wild Times!** But you may ask, why would you make a website for a Discord server? Well, firstly, to learn more on building apps (or terrible apps/website) using a JavaScript framework, Vue.js, since having an understandable knowledge if HTML, CSS, and barely any JavaScript at all lol
 
